@@ -38,7 +38,7 @@ export default class Sidebar extends React.Component {
 
     clickActive = (title, path) => {
         this.goToRoute(path)
-        this.setState(() => ({ isActive: title}));
+        this.setState(() => ({ isActive: title }));
     }
 
     render() {
@@ -61,17 +61,17 @@ export default class Sidebar extends React.Component {
                             />
                             <span className={sidebarHeaderBlockName}>TensorFlow</span>
                         </div>
-                        <button className={sidebarHeaderButton} onClick={ this.toggleSidebar }>
-                            <FontAwesomeIcon className={sidebarHeaderButtonIcon} icon='angle-right' />
+                        <button className={ sidebarHeaderButton } onClick={ this.toggleSidebar }>
+                            <FontAwesomeIcon className={ sidebarHeaderButtonIcon } icon='angle-right' />
                         </button>
                     </div>
 
                     <div className='sidebarList'>
                         {
                             routes.map((route) => (
-                                <div className={`sidebarElement ${isActive === route.title ? "sidebarElement-active" : ""}`} key={ route.title } onClick={ () => this.clickActive(route.title, route.path) }>
+                                <div className={ `sidebarElement ${ isActive === route.title ? "sidebarElement-active" : "" } `} key={ route.title } onClick={ () => this.clickActive(route.title, route.path) }>
                                     <FontAwesomeIcon className='sidebarElement__icon' icon={ route.icon } />
-                                    <span className={sidebarElementTitle}>{ route.title }</span>
+                                    <span className={ sidebarElementTitle }>{ route.title }</span>
                                 </div>
                             ))
                         }
@@ -81,9 +81,9 @@ export default class Sidebar extends React.Component {
                 <div className='sidebarList'>
                     {
                         bottomRoutes.map((route) => (
-                            <div className={`sidebarElement ${isActive === route.title ? "sidebarElement-active" : ""}`} key={ route.title } onClick={ () => this.clickActive(route.title, route.path) }>
+                            <div className={ `sidebarElement ${ isActive === route.title ? "sidebarElement-active" : "" }` } key={ route.title } onClick={ () => this.clickActive(route.title, route.path) }>
                                 <FontAwesomeIcon className='sidebarElement__icon' icon={ route.icon } />
-                                <span className={sidebarElementTitle}>{ route.title }</span>
+                                <span className={ sidebarElementTitle }>{ route.title }</span>
                             </div>
                         ))
                     }
